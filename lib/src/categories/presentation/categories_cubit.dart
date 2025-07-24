@@ -20,9 +20,9 @@ class CategoryCubit extends Cubit<CategoryState> {
 
 
   Future<void> fetchCategories() async {
-    // if(state is StateFetchedCategories){
-    //   return;
-    // }
+    if(state is StateFetchedCategories){
+      return;
+    }
     emit(const StateGettingCategory());
     final result = await  _getCategories();
     result.fold(

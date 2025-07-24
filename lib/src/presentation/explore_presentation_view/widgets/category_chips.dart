@@ -41,7 +41,7 @@ class CategoryChips extends StatelessWidget {
                   label: Text(
                     category.name ?? 'Category ${index + 1}',
                     style: TextStyle(
-                      color: isSelected ? context.textColor : Colors.grey[600],
+                      color: isSelected ? Colours.white : Colors.grey[600],
                       fontWeight:
                           isSelected ? FontWeight.w600 : FontWeight.normal,
                     ),

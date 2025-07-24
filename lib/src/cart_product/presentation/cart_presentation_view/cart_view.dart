@@ -1,6 +1,7 @@
 import 'package:e_triad/core/common/app/bloc_providers/user_provider.dart';
 import 'package:e_triad/core/common/widgets/rounded_button.dart';
 import 'package:e_triad/core/extension/context_ext.dart';
+import 'package:e_triad/core/res/colours.dart';
 import 'package:e_triad/src/cart_product/presentation/cart_cubit.dart';
 import 'package:e_triad/src/cart_product/presentation/cart_presentation_view/widgets/cart_header.dart';
 import 'package:e_triad/src/cart_product/presentation/cart_presentation_view/widgets/cart_section.dart';
@@ -108,7 +109,7 @@ class _CartViewState extends State<CartView> {
                   child: RoundedButton(
                     text: 'Proceed to checkout',
                     textStyle: context.theme.textTheme.bodyLarge!.copyWith(
-                      color: context.textColor,
+                      color: Colours.white,
                       fontSize: 18,
                     ),
                     onPressed: () {

@@ -1,11 +1,14 @@
 
+import 'package:e_triad/core/services/injection_container_import.dart';
 import 'package:e_triad/core/utils/core_utils.dart';
 import 'package:e_triad/src/presentation/home_presentation_view/widgets/promotions.dart';
 import 'package:e_triad/src/presentation/home_presentation_view/widgets/provider_sections/categories_section.dart';
 import 'package:e_triad/src/presentation/home_presentation_view/widgets/provider_sections/new_arrivals_section.dart';
 import 'package:e_triad/src/presentation/home_presentation_view/widgets/provider_sections/popular_products_section.dart';
 import 'package:e_triad/src/presentation/home_presentation_view/widgets/provider_sections/search_section.dart';
+import 'package:e_triad/src/products/presentation/product_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:gap/gap.dart';
 
@@ -34,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
         child: Column(
           children: [
-            const SearchSection(),
+            BlocProvider(create:(_) => sl<ProductCubit>(),child:  const SearchSection()),
 
             Expanded(
               child: ListView(

@@ -18,7 +18,11 @@ class SearchSection extends StatefulWidget {
 class _SearchSectionState extends State<SearchSection> {
   final SearchController searchController = SearchController();
   final FocusNode _focusNode = FocusNode();
-
+@override
+  void initState() {
+    super.initState();
+    context.read<ProductCubit>().getAllProducts();
+  }
   @override
   void dispose() {
     searchController.dispose();
@@ -138,9 +142,9 @@ class _SearchSectionState extends State<SearchSection> {
       builder: (context, state) {
         return SearchAnchor.bar(
           searchController: searchController,
-          onTap: () {
-            context.read<ProductCubit>().getAllProducts();
-          },
+          // onTap: () {
+          //   context.read<ProductCubit>().getAllProducts();
+          // },
           suggestionsBuilder:
               (context, controller) =>
                   _buildSuggestions(context, controller, state),
